@@ -13,12 +13,14 @@ Antes de comenzar, asegúrate de tener [Python](https://www.python.org/downloads
    ```bash
    python -m venv venv
 2. Activalo asi:
-  venv\Scripts\activate
-3. Instala las dependencias:
-   
-  pip install -r requirements.txt
+   ```bash
+   venv\Scripts\activate
+4. Instala las dependencias:
+   ```bash
+   pip install -r requirements.txt
 
 4. Ejecutar:
+   ```bash
    python manage.py runserver
 
 
