@@ -20,5 +20,5 @@ from .applications.indicadores import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path ('indicadores_combinados/', views.obtener_indicadores_combinados),
-    path('test/', views.ingresos_egresos_mensuales)
+    #path('test/', views.ingresos_egresos_mensuales)
 ]

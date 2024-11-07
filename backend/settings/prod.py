@@ -9,9 +9,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'mssql',
         'NAME': 'db_aae575_unidadb',
-        'USER': 'admin',  # Usuario de SQL Server
-        'PASSWORD': 'admin',  # Contraseña de SQL Server
-        'HOST': 'localhost',  # El nombre de tu servidor o IP
+        'USER': 'db_aae575_unidadb_admin',  # Usuario de SQL Server
+        'PASSWORD': 'P0clin123',  # Contraseña de SQL Server
+        'HOST': 'SQL5112.site4now.net',  # El nombre de tu servidor o IP
         #'PORT': '',  # Puerto del servidor, si es necesario (por defecto 1433)
         'OPTIONS': {
             'driver': 'ODBC Driver 17 for SQL Server',  # El driver ODBC adecuado
