@@ -17,7 +17,7 @@ Antes de comenzar, asegúrate de tener [Python](https://www.python.org/downloads
    venv\Scripts\activate
 4. Instala las dependencias:
    ```bash
-   pip install -r requirements.txt
+   pip install -r requeriments.txt
 
 4. Ejecutar:
    ```bash
