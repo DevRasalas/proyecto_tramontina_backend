@@ -25,9 +25,11 @@ def Obtener_Proveedores_Activos(request):
 
         resultado = cursor.fetchone()
         
-        response_data = {
-            'pedidos_totales': int(resultado[0])
-        }
+        if resultado is None or resultado[0] is None:
+            response_data = int(0)
+        else:
+            response_data = int(resultado[0])
+        
         
     return response_data
 
@@ -98,18 +100,14 @@ def Obtener_Stock_Total(request):
 
 def Pagos_Pendientes_Por_Compra(request):
     with connection.cursor() as cursor:
-        cursor.execute('exec RendimientoEmpresarial.ObtenerPagosPendientesPorCompra')
+        cursor.execute('SELECT [RendimientoEmpresarial].[ObtenerTotalPagosPendientes]();')
         
-        resultados = cursor.fetchall()
-        response_data = []
-        for resultado in resultados:
-            response_data.append(
-                {
-                    'montoTotal' : int(resultado[1]),
-                    'montoPagado' : int(resultado[2]),
-                    'montoPendiente' : int(resultado[3]),
-                }
-            )
+        resultados = cursor.fetchone()
+        
+        if resultados is None or resultados[0] is None:
+            response_data = 0.0
+        else:
+            response_data = float(resultados[0])
     return response_data
 
 def obtener_indicadores_combinados(request):
