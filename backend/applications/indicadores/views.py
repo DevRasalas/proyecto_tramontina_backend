@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from django.db import connection
 from .validador import *
+from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 val = validador()
@@ -133,3 +134,15 @@ def obtener_indicadores_combinados(request):
 
     # Devolver el JSON completo
     return JsonResponse(response_data, safe=False)
+
+@csrf_exempt
+def actualizar_tasacrecimiento(request):
+    if request.method == 'POST':
+        try:
+            with connection.cursor() as cursor:
+                cursor.execute("EXEC RendimientoEmpresarial.[ActualizarCrecimientoMensual]")
+            return JsonResponse({'success': True, 'message': 'Proceso ejecutado correctamente.'})
+        except Exception as e:
+            return JsonResponse({'success': False, 'message': str(e)})
+    else:
+        return JsonResponse({'success': False, 'message': 'Método no permitido.'}, status=405)
