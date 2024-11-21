@@ -5,7 +5,7 @@ from .validador import *
 from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
-val = validador()
+
 
 def pedidos_totales(request):
     with connection.cursor() as cursor:
